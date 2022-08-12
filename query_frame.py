@@ -2,6 +2,7 @@ import tkinter
 from tkinter import StringVar, ttk
 
 import Employee
+import main_frame
 
 
 def create_frame(frame):
@@ -25,6 +26,7 @@ def create_frame(frame):
     name_sort_bttn = ttk.Button(frame,text="Name", command= lambda : sort_name())
     salary_sort_bttn = ttk.Button(frame,text="Salary", command= lambda : sort_salary())
     date_sort_bttn = ttk.Button(frame,text="Date", command= lambda : sort_date())
+    back_bttn = ttk.Button(frame, text="Back", command= lambda: back())
     
     id_sort_bttn.grid(column=0,row=0)
     name_sort_bttn.grid(column=1,row=0)
@@ -36,6 +38,7 @@ def create_frame(frame):
     
     nxt_bttn.grid(column=3,row=12)
     last_bttn.grid(column=0,row=12,sticky=W)
+    back_bttn.grid(column = 5, row =12)
     
     def nxt_set():
         nonlocal current_page
@@ -82,3 +85,6 @@ def create_frame(frame):
         current_page = 0
         for y in range(10):
             label_var[y].set(emp_list[y])
+            
+    def back():
+        main_frame.create_frame(frame)
