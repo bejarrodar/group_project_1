@@ -2,6 +2,7 @@ import tkinter
 from tkinter import StringVar, ttk
 
 import Employee
+import main_frame
 
 
 def create_frame(frame):

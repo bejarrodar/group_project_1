@@ -2,6 +2,7 @@ import tkinter
 from tkinter import StringVar, ttk
 
 import Employee
+import main_frame
 
 
 def create_frame(frame):
@@ -17,6 +18,7 @@ def create_frame(frame):
     
     search_name_bttn = ttk.Button(frame, text="Search", command= lambda : search_name())
     search_id_bttn = ttk.Button(frame, text="Search", command= lambda : search_id())
+    back_bttn = ttk.Button(frame,text="Cancel",command=lambda : back())
     
     search_name_label.grid(column=0,row=0)
     search_id_label.grid(column=0,row=1)
@@ -24,6 +26,7 @@ def create_frame(frame):
     search_id_entry.grid(column=1,row=1)
     search_name_bttn.grid(column=2,row=0)
     search_id_bttn.grid(column=2,row=1)
+    back_bttn.grid(column= 3, row =1)
     
     
     output_var = StringVar()
@@ -43,4 +46,7 @@ def create_frame(frame):
             print("Couldn't understand")
         employee = Employee.Employee.query_id(emp_id)
         output_var.set(employee)
+        
+    def back():
+        main_frame.create_frame(frame)
     
