@@ -29,6 +29,7 @@ if __name__ == "__main__":
     sales = Employee.Department("Sales")
     development = Employee.Department("Development")
     marketing = Employee.Department("Marketing")
+    File_Handler.Read_File()
     for _ in range(20):
         test = Employee.Employee("test",32555)
         test.change_date("03/12/2020")
